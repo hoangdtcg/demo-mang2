@@ -1,0 +1,16 @@
+for(let i = 2; i < n; i++) // Không chia số nào thì là số nguyên
+- for(let i = 2; i < n/2; i++)
+- for(let i =  3; i< n/2; i+=2) //(if n % 2 == 0)
+
+- for(let i =  3; i< sqrt(n); i+=2) 
+- 81. 9*9 . 10*8. 11*7
+
+- Biến là gì?
+- Biến là đại diện cho 1 ô nhớ chứa giá trị
+
+- Calculator:
+- B1: Tạo HTML form và các nút
+- B2: Ấn nút hiển thị lên màn hình
+- B3: Viết hàm tính toán cho biểu thức trên màn hình
+- B4: In ra màn hình kết quả
+- B5: Làm đẹp

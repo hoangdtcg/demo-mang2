@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="addStudent()">ADD NEW STUDENT</button>
+    <button onclick="deleteStudent()">DELETE STUDENT</button>
+    <button onclick="editStudent()">EDIT STUDENT</button>
+
+
+    <div id="student-list">
+
+    </div>
+    <br>
+    <script>
+        let students = ["Hải", "Thành", "Hiếu", "Mai", "Linh", "Toàn"];
+        let studentsAge = [18, 12, 20, 21, 19, 17];
+
+        let students2 =[
+            ["Hải",18,"Hà Nội"],
+            ["Thành",20,"HCM"],
+        ]
+
+        console.log(students2);
+
+        // document.write(students);
+        displayStudents();
+
+
+        function addStudent() {
+            let name = prompt("Nhập tên học sinh");
+            
+            students.push(name);
+
+            displayStudents();
+        }
+
+        function deleteStudent() {
+            let index = +prompt("Vị trí học viên muốn xóa");
+            students.splice(index,1);
+
+            displayStudents();
+        }
+
+        function editStudent() {
+            let index = +prompt("Vị trí học viên muốn xóa");
+            students[index] = prompt("Nhập tên mới");
+
+            displayStudents();
+        }
+
+        function displayStudents() {
+            let txtStudents = "";
+            for (let i = 0; i < students.length; i++) {
+                txtStudents += students[i] + "-";
+                txtStudents += studentsAge[i] + "<br>";
+                // txtStudents += "<button>Xóa</button>";
+                // txtStudents += "<button>Sửa</button>";
+                // txtStudents += "<br>";
+
+            }
+            document.getElementById("student-list").innerHTML = txtStudents;
+        }
+    </script>
+</body>
+
+</html>

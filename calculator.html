@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        width: 60px;
+        height: 60px;
+    }
+
+    button {
+        width: 100%;
+        height: 100%;
+        /* background: #dadce0; */
+        color: #202124;
+        border: 1px solid #dadce0;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    #man-hinh {
+        text-align: right;
+        padding-right: 10px;
+        border: 1px solid #dadce0;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <td id="man-hinh" colspan="4"></td>
+        </tr>
+        <tr>
+            <td><button onclick="clickButton('(')">(</button></td>
+            <td><button onclick="clickButton(')')">)</button></td>
+            <td><button onclick="clickButton('%')">%</button></td>
+            <td><button onclick="xoaManHinh()">AC</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clickButton(7)">7</button></td>
+            <td><button onclick="clickButton(8)">8</button></td>
+            <td><button onclick="clickButton(9)">9</button></td>
+            <td><button onclick="clickButton('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clickButton(4)">4</button></td>
+            <td><button onclick="clickButton(5)">5</button></td>
+            <td><button onclick="clickButton(6)">6</button></td>
+            <td><button onclick="clickButton('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clickButton(1)">1</button></td>
+            <td><button onclick="clickButton(2)">2</button></td>
+            <td><button onclick="clickButton(3)">3</button></td>
+            <td><button onclick="clickButton('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clickButton(0)">0</button></td>
+            <td><button onclick="clickButton('.')">.</button></td>
+            <td><button onclick="cal()">=</button></td>
+            <td><button onclick="clickButton('+')">+</button></td>
+        </tr>
+    </table>
+    <script>
+        let manHinh = document.getElementById("man-hinh");
+        
+        function clickButton(a) {
+            
+            let bieuThuc = manHinh.innerHTML;
+            let lastIndex = bieuThuc.length-1;
+            if(a == "+" || a == "-" || a == "*" || a == "/"){
+                if(bieuThuc[lastIndex] == "+" || bieuThuc[lastIndex] == "-" || bieuThuc[lastIndex] == "*" ||bieuThuc[lastIndex] == "/" ){
+                    alert("Ky tu khong hop le");
+                    return;
+                }
+            }
+            
+            manHinh.innerHTML += a;
+            
+            
+        }
+
+        function cal() {
+            let bieuThuc = manHinh.innerHTML;
+            let kq = eval(bieuThuc);
+            manHinh.innerHTML = kq;
+        }
+
+        function xoaManHinh() {
+            manHinh.innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>
